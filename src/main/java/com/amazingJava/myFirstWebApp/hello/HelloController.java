@@ -1,5 +1,7 @@
 package com.amazingJava.myFirstWebApp.hello;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -7,6 +9,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloController {
+
+    @RequestMapping(path = "/",method = RequestMethod.GET)
+    public ResponseEntity<Object> homePage(){
+        return new ResponseEntity<Object>("hello world version -v1", HttpStatus.OK);
+    }
+
     //say-hello
     @RequestMapping("say-hello")    //for return view
     @ResponseBody                 //for return the string of return;
