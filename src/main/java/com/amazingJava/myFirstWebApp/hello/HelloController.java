@@ -14,6 +14,10 @@ public class HelloController {
     public ResponseEntity<Object> homePage(){
         return new ResponseEntity<Object>("hello world version -v1", HttpStatus.OK);
     }
+    @RequestMapping(path = "/home",method = RequestMethod.GET)
+    public ResponseEntity<Object> RootPage(){
+        return new ResponseEntity<Object>("hello world in Home page", HttpStatus.OK);
+    }
 
     //say-hello
     @RequestMapping("say-hello")    //for return view
