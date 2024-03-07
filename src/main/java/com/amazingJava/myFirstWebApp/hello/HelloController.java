@@ -12,7 +12,7 @@ public class HelloController {
 
     @RequestMapping(path = "/",method = RequestMethod.GET)
     public ResponseEntity<Object> homePage(){
-        return new ResponseEntity<Object>("hello world version -v1", HttpStatus.OK);
+        return new ResponseEntity<Object>("hello world: Spring Boot Maven Plugin ", HttpStatus.OK);
     }
     @RequestMapping(path = "/home",method = RequestMethod.GET)
     public ResponseEntity<Object> RootPage(){

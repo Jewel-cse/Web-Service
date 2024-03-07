@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.amazingJava</groupId>
-	<artifactId>myFirstWebApp</artifactId>
+	<artifactId>my-first-web-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>myFirstWebApp</name>
+	<name>my-first-web-app</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>21</java.version>

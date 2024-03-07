@@ -44,7 +44,7 @@ ENTRYPOINT ["java", "-jar", "/app.jar"]
 
 ## Dockerfile - 3 - Caching
 If there are any change occur ,then its build from the start.
-so we need to chache them and build the specific changes 
+so we need to cache them and build the specific changes 
 ```
 # Use Maven image with JDK 18 for building
 FROM maven:3.8.6-openjdk-18-slim AS build
@@ -65,3 +65,43 @@ ENTRYPOINT ["java", "-jar", "/app.jar"]
 
 
 ```
+
+## Some spring Boot maven commands
+
+
+[run an application]
+``` 
+mvn spring-boot:run  
+```
+[use it to integration test]
+``` 
+mvn spring-boot:start 
+```
+[stop applicatin which is started by start]
+``` 
+mvn spring-boot:stop  
+```
+
+[build a docker image]
+``` 
+mvn spring-boot:build-image  
+```
+
+## ****Build docker image using Spring boot maven plugin****
+### This is very efficient and easiest way to build docker image
+* delete Dockerfile
+* make sure project name : [a-z0-9][-][_] 
+* Docker desktop running
+* then build image using
+```
+mvn spring-boot:build-image
+```
+name of image:  docker.io/library/project-name:0.0.1-SNAPSHOT
+check: docker image list
+### run the image container
+
+```
+docker container run -d -p 5000:5000 project-name:tag
+```
+Ex:
+docker container run -d -p 5000:5000 my-first-web-app:0.0.1-SNAPSHOT
